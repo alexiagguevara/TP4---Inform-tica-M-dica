@@ -1,1 +1,1 @@
-# TP4---Inform-tica-M-dica
+# TP4---Informática-Médica
