@@ -9,5 +9,7 @@ Repositorio desarrollado para la realización del Trabajo Práctico Nº 4 de la 
 - Alexia Garcia Guevara
 - Mora Miranda
 
-## Requisitos
+# Descripción
+
+# Requisitos
 El trabajo fue desarrollado utilizando **PostgreSQL**. Para ejecutar y visualizar los resultados de las consultas se empleó **SQLite Online**. Sin embargo, cualquier otra herramienta compatible con PostgreSQL puede ejecutar las mismas consultas sin inconvenientes.
