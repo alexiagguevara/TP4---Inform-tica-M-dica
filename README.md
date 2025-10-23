@@ -1,4 +1,4 @@
-Repositorio desarrollado para la realización del Trabajo Práctico N.º 4 de la asignatura Informática Médica del Instituto Tecnológico de Buenos Aires (ITBA), correspondiente al segundo cuatrimestre de 2025.
+Repositorio desarrollado para la realización del Trabajo Práctico Nº 4 de la asignatura Informática Médica del Instituto Tecnológico de Buenos Aires (ITBA), correspondiente al segundo cuatrimestre de 2025.
 # 16.22 - Informática Médica
 ## Cátedra
 - Carlos Lazzarino 
