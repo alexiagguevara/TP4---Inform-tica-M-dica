@@ -1,5 +1,3 @@
-![][image1]
-
 # **16.22 Informática Médica** - **Trabajo Práctico 4** - **2Q 2025**
 **BBDD, SQL y manejo de versiones**
 
@@ -7,7 +5,7 @@
 
 **Integrantes:**
 
-| García Guevara Alexia  | 62721 |
+| García Guevara Alexia  | 62721 | 
 | :---- | :---: |
 | Miranda Mora | 62702 |
 
@@ -94,7 +92,7 @@ FROM pacientes
 GROUP BY ciudad;
 ```
 Podemos observar la cantidad de pacientes por ciudad, y notar las inconsistencias de las maneras en que se escribieron las ciudades, las cuales generan problemas de integridad como se mencionó anteriormente.  
-![][image5]
+<img width="420" height="419" alt="Screenshot 2025-10-27 at 1 43 09 PM" src="https://github.com/user-attachments/assets/64d7ac20-3fee-41a3-8046-c15c7d16f09a" />
 
 ## **2\. Se tiene la fecha de nacimiento de los pacientes. Se desea calcular la edad de los pacientes y almacenarla de forma dinámica en el sistema ya que es un valor típicamente consultado, junto con otra información relevante del paciente.**
 
@@ -112,7 +110,8 @@ FROM Pacientes
 LEFT JOIN sexobiologico ON sexobiologico.id_sexo = pacientes.id_sexo; 
 ```
 Los resultados obtenidos son los siguientes:   
-![][image7]  
+<img width="602" height="439" alt="Screenshot 2025-10-27 at 1 44 13 PM" src="https://github.com/user-attachments/assets/d58128b1-e0fd-4243-877f-a428bfe9b1a4" />
+
 Aclaración: la tabla está truncada ya que es muy larga.
 
 ## **3\. La paciente, “Luciana Gómez”, ha cambiado de dirección. Antes vivía en “Avenida Las Heras 121” en “Buenos Aires”, pero ahora vive en “Calle Corrientes 500” en “Buenos Aires”. Actualizar la dirección de este paciente en la base de datos.**
@@ -124,7 +123,8 @@ set calle='Calle Corrientes', numero=500
 WHERE nombre='Luciana Gómez';
 ```
 En la vista creada en el punto 2 podemos ver la actualización de la dirección:  
-![][image9]
+<img width="673" height="24" alt="Screenshot 2025-10-27 at 1 44 44 PM" src="https://github.com/user-attachments/assets/e5cd85e0-c002-494b-9dbf-5bab65bdf3bd" />
+
 
 ## **4\. Seleccionar el nombre y la matrícula de cada médico cuya especialidad sea identificada por el id 4\.**
 
@@ -135,7 +135,8 @@ from medicos
 where especialidad_id=4;
 ```
 Resultado:  
-![][image11]
+<img width="400" height="86" alt="Screenshot 2025-10-27 at 1 45 02 PM" src="https://github.com/user-attachments/assets/9627bcc6-9aba-452f-98e2-e8453b83fd54" />
+
 
 ## **5\. Puede pasar que haya inconsistencias en la forma en la que están escritos los nombres de las ciudades, ¿cómo se corrige esto? Agregar la query correspondiente.**
 
@@ -150,7 +151,8 @@ else 'Rosario'
 END;
 ```
 Podemos ver que en la tabla pacientes las ciudades ahora son todas consistentes (tabla presentada truncada):  
-![][image13]
+<img width="674" height="269" alt="Screenshot 2025-10-27 at 1 45 20 PM" src="https://github.com/user-attachments/assets/23721029-6c3d-4d67-8bc8-e422f4d81567" />
+
 
 ## **6\. Obtener el nombre y la dirección de los pacientes que viven en Buenos Aires.**
 
@@ -161,7 +163,8 @@ from pacientes
 where ciudad='Buenos Aires';
 ```
 Resultado:  
-![][image15]
+<img width="462" height="236" alt="Screenshot 2025-10-27 at 1 45 40 PM" src="https://github.com/user-attachments/assets/4bb9bd33-7f71-48db-978c-0298a8c762fe" />
+
 
 ## **7\. Cantidad de pacientes que viven en cada ciudad.**
 
@@ -172,7 +175,8 @@ from pacientes
 GROUP by ciudad;
 ```
 Resultados:  
-![][image17]
+<img width="455" height="170" alt="Screenshot 2025-10-27 at 1 45 57 PM" src="https://github.com/user-attachments/assets/c575ca9d-606d-4347-90ef-90b64d0ffdc0" />
+
 
 ## **8\. Cantidad de pacientes por sexo que viven en cada ciudad.**
 
@@ -188,7 +192,8 @@ GROUP by pacientes.ciudad, sexobiologico.id_sexo
 order by pacientes.ciudad, sexobiologico.id_sexo;
 ```
 Resultados:  
-![][image19]
+<img width="612" height="306" alt="Screenshot 2025-10-27 at 1 46 18 PM" src="https://github.com/user-attachments/assets/1eeff80c-dae0-48f4-b64c-7b2da00f8a42" />
+
 
 ## **9\. Obtener la cantidad de recetas emitidas por cada médico.**
 
@@ -201,7 +206,8 @@ Group By medicos.nombre
 ORDER BY "Cantidad de recetas" DESC;
 ```
 Resultado obtenido:  
-![][image21]  
+<img width="502" height="347" alt="Screenshot 2025-10-27 at 1 46 35 PM" src="https://github.com/user-attachments/assets/d7a13ed6-8edf-4c26-9cd2-64fed1000c89" />
+
 Aclaración: tabla truncada
 
 ## **10\. Obtener todas las consultas médicas realizadas por el médico con ID igual a 3 durante el mes de agosto de 2024\.**
@@ -220,7 +226,8 @@ where id_medico=3 and fecha BETWEEN '2024-08-01' and '2024-08-31'
 order by fecha;
 ```
 Resultados:  
-![][image23]
+<img width="614" height="112" alt="Screenshot 2025-10-27 at 1 46 54 PM" src="https://github.com/user-attachments/assets/5269e64b-d4eb-4f8b-a380-74d6ae748154" />
+
 
 ## **11\. Obtener el nombre de los pacientes junto con la fecha y el diagnóstico de todas las consultas médicas realizadas en agosto del 2024\.**
 
@@ -233,7 +240,8 @@ where fecha BETWEEN '2024-08-01' and '2024-08-31'
 order by consultas.fecha;
 ``` 
 Resultados:   
-![][image25]  
+<img width="520" height="292" alt="Screenshot 2025-10-27 at 1 47 13 PM" src="https://github.com/user-attachments/assets/7a44a1b9-4ec4-43b7-a96f-36905921c1c4" />
+
 Aclaración: tabla truncada
 
 ## **12\. Obtener el nombre de los medicamentos prescritos más de una vez por el médico con ID igual a 2\.**
@@ -248,7 +256,8 @@ GROUP by medicamentos.nombre
 HAVING count(recetas.id_medicamento)>1;
 ``` 
 Resultado:  
-![][image27]
+<img width="147" height="56" alt="Screenshot 2025-10-27 at 1 47 34 PM" src="https://github.com/user-attachments/assets/4a8947f1-decc-449d-a6fd-858ad44492f1" />
+
 
 ## **13\. Obtener el nombre de los pacientes junto con la cantidad total de recetas que han recibido.**
 
@@ -263,7 +272,8 @@ GROUP by pacientes.id_paciente, pacientes.nombre
 order by "Cantidad de recetas" desc;
 ``` 
 Resultados:  
-![][image29]  
+<img width="401" height="378" alt="Screenshot 2025-10-27 at 1 47 52 PM" src="https://github.com/user-attachments/assets/77d0c8fa-54ef-4ede-b2e8-c0c2af5d7469" />
+  
 Aclaración: tabla truncada
 
 ## **14\. Obtener el nombre del medicamento más recetado junto con la cantidad de recetas emitidas para ese medicamento.**
@@ -286,7 +296,8 @@ HAVING COUNT(recetas.id_medicamento) = (
 );
 ``` 
 Resultado:  
-![][image31]
+<img width="441" height="63" alt="Screenshot 2025-10-27 at 1 48 11 PM" src="https://github.com/user-attachments/assets/0e6fa8d3-21e0-4a65-807a-76c7e107c80d" />
+
 
 ## **15\. Obtener el nombre del paciente junto con la fecha de su última consulta y el diagnóstico asociado.**
 
@@ -301,7 +312,8 @@ join consultas on pacientes.id_paciente = consultas.id_paciente
 where consultas.fecha = (SELECT max(c2.fecha) from consultas c2 where id_paciente = pacientes.id_paciente);
 ```
 Resultados:  
-![][image33]  
+<img width="676" height="582" alt="Screenshot 2025-10-27 at 1 48 31 PM" src="https://github.com/user-attachments/assets/8289d348-5751-4805-915e-52653b5085b5" />
+ 
 Aclaración: tabla truncada
 
 ## **16\. Obtener el nombre del médico junto con el nombre del paciente y el número total de consultas realizadas por cada médico para cada paciente, ordenado por médico y paciente.**
@@ -319,7 +331,8 @@ group by pacientes.nombre, medicos.nombre
 order by medicos.nombre, pacientes.nombre;
 ``` 
 Resultados:  
-![][image35]  
+<img width="672" height="369" alt="Screenshot 2025-10-27 at 1 48 53 PM" src="https://github.com/user-attachments/assets/1bdd1e74-3d5b-4c5c-9090-61bca9a32074" />
+
 Aclaración: tabla truncada
 
 ## **17\. Obtener el nombre del medicamento junto con el total de recetas prescritas para ese medicamento, el nombre del médico que lo recetó y el nombre del paciente al que se le recetó, ordenado por total de recetas en orden descendente.**
@@ -342,7 +355,8 @@ GROUP by
 order by "Cantidad de recetas prescritas" desc;
 ```
 Resultados:   
-![][image37]  
+<img width="632" height="347" alt="Screenshot 2025-10-27 at 1 49 12 PM" src="https://github.com/user-attachments/assets/eb47c8b5-bb24-4848-8047-6da7497cdf77" />
+  
 Aclaración: tabla truncada
 
 ## **18\. Obtener el nombre del médico junto con el total de pacientes a los que ha atendido, ordenado por el total de pacientes en orden descendente.**
@@ -358,22 +372,4 @@ group by medicos.id_medico, medicos.nombre
 order by "Pacientes atendidos" DESC;
 ``` 
 Resultados:  
-![][image39]
-
-# **Parte 3: Manejo de versiones con Git y Github**
-
-## **1\. Crear un repositorio público en Github en la que cada miembro del grupo de trabajo sea un colaborador como también las docentes de la materia (euberrino y meli-piacentino)**
-
-## **2\. El repositorio dentro debe tener creado un archivo README adecuado como presentación del repositorio y del TP (nombre y apellido de alumnos, nombre de la materia, nombre y apellido de profesores, logo del ITBA y todo lo que crean necesario como portada del repositorio)**
-
-## **3\. Guardar cada una de las queries que se utilizaron para resolver las primeras 10 consignas de SQL en distintos archivos con el nombre NN\_InfoMed\_TP5\_Apellido1Apellido2.sql siendo NN. el número de consigna (2 cifras) y Apellido el apellido de cada miembro del grupo. Todo esto debe ser creado en un mismo commit mergeado a main.**
-
-## **4\. Las consignas 11 a 15 inclusive deben realizarse en archivos con el mismo nombre indicado en el ítem anterior, pero cada archivo debe ser agregado al repositorio en un commit propio que va a ser mergeado directamente a main. Debe haber commits de todos los integrantes del equipo.**
-
-## **5\. Los archivos de las consignas 16, 17 y 18 deben querer agregarse a main en un PR cuya rama se llama students/apellido1apellido2/TP5\_16\_17\_18. Documentar y configurar apropiadamente el PR (Reviewers, Assignees, Labels). No mergear a main el PR, sino que se debe dejar abierto y documentado.**
-
-Ponemos a Mora Miranda como ‘Reviewer’ ya que no nos permite ponerlos a ustedes.
-
-## **6\. Agregar a main, un archivo en formato markdown (.md) llamado InfoMed\_TP4\_Apellido1Apellido2.md la resolución del trabajo completa, respondiendo las consignas de la parte 1 y 2 del TP. Cada query de sql debe estar hecha en formato de texto tipo código y una imagen debajo sobre el output arrojado por hacer esa consulta. Generar este archivo en un commit diferencial mergeado a main.**
-
-El repositorio utilizado para toda esta parte se encuentra en Github con acceso público en: [Repositorio](https://github.com/alexiagguevara/TP4---Inform-tica-M-dica.git). 
+<img width="446" height="248" alt="Screenshot 2025-10-27 at 1 49 34 PM" src="https://github.com/user-attachments/assets/e6bba625-064f-436a-9c7a-e6913e9f05e1" />
